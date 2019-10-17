@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+<span>Star :</span>
+<input type="text" id="starname" oninput="nameofstar(this.value)" onchange="namofstar(this.value)">
+<br>
+<br>
+
+<span>Kết Quả :</span>
+<span id="hienthi"></span>
+
+<br>
+</form>
+<script>
+    let x = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let y = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let message = '';
+    function nameofstar(nameStar) {
+        let i = x.indexOf(nameStar);
+        if (i !== -1) {
+            message = x[i] + " thuộc về " + y[i];
+        } else message = "không có thông tin " + nameStar;
+        document.getElementById('hienthi').innerHTML = message;
+    }
+</script>
+</body>
+</html>

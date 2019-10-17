@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>Number1 :</span>
+<input type="text" id="number1" oninput="so_sanh(this.value)" onchange="so_sanh(this.value)">
+<br>
+<br>
+<span>Number2 :</span>
+<input type="text" id="number2" oninput="so_sanh(this.value)" onchange="so_sanh(this.value)">
+<br>
+<br>
+<span>Kết quả &nbsp :</span>
+<span id="hienthi"></span>
+<br>
+<br>
+<script>
+    function so_sanh(x,y) {
+         x = parseFloat(document.getElementById("number1").value);
+         y = parseFloat(document.getElementById("number2").value);
+         let message = "";
+         let ketqua = x + y;
+        if (Number.isNaN(x) === false && Number.isNaN(y) === false) {
+            if (x > y) {
+                message = " Nai Xừ";
+            } else {
+                message =  x + y;
+            }
+        }
+         document.getElementById("hienthi").innerHTML = message;
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>
